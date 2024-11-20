@@ -1,0 +1,13 @@
+{
+  "name": "TypeScript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Maryna-Mala/TypeScript.git",
+  "author": "Maryna Mala <marinamalaa0@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.48.2",
+    "@types/node": "^22.9.0"
+  },
+  "scripts": {}
+}
