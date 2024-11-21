@@ -16,6 +16,8 @@ test.describe('Login with valid credentials for your free account', async () => 
         await expect(page.locator("//span[contains(text(), 'Coffee Tonic Idealist 0,33 л')]")).toBeVisible()
         //adding it to the cart
         await page.locator('[data-product-sku="4650"]').click()
+        //check the cart visibility
+        await expect(page.locator('.minicart-items-wrapper')).toBeVisible()
     });
 
 });
