@@ -11,7 +11,7 @@ test.describe('Idealist login', async () => {
         await page.locator('[name="login[password]"]').fill('Testuser1234');
         await page.locator("//button[contains(@class, 'primary')]").click();
 
-        const profileIcon = page.locator('.icon-account');
+        const profileIcon = page.locator("//a[contains(@class, 'customer-action')]");
         await expect(profileIcon).toBeVisible();
     });
 

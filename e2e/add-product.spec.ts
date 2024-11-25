@@ -17,7 +17,7 @@ test.describe('Login with valid credentials for your free account', async () => 
         //adding it to the cart
         await page.locator('[data-product-sku="4650"]').click()
         //check the cart visibility
-        await expect(page.locator('.minicart-items-wrapper')).toBeVisible()
+        await expect(page.locator('#minicart-content-wrapper')).toBeVisible()
     });
 
 });
