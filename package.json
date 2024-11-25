@@ -1,13 +1,29 @@
 {
-  "name": "TypeScript",
+  "name": "typescript-idealistcoffee.com",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "repository": "https://github.com/Maryna-Mala/TypeScript.git",
-  "author": "Maryna Mala <marinamalaa0@gmail.com>",
+  "author": "Maryna Mala",
   "license": "MIT",
   "devDependencies": {
+    "@eslint/js": "^9.15.0",
     "@playwright/test": "^1.48.2",
-    "@types/node": "^22.9.0"
+    "@types/node": "^22.9.0",
+    "eslint": "^9.15.0",
+    "globals": "^15.12.0",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.15.0"
   },
-  "scripts": {}
+  "scripts": {
+    "test": "yarn playwright test",
+    "report": "yarn playwright show-report",
+    "lint": "yarn eslint \"src/**\""
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.15.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "prettier": "^3.3.3",
+    "typescript-eslint-parser": "^22.0.0"
+  }
 }
