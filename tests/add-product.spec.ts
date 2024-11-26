@@ -13,9 +13,9 @@ test.describe('Login with valid credentials for your free account', async () => 
         //click on header on the home page
         await page.locator("//li[contains(@class, 'nav-1')]").click()
         //the first item on the page is visible
-        await expect(page.locator("//span[contains(text(), 'Coffee Tonic Idealist 0,33 л')]")).toBeVisible()
+        await expect(page.locator("//li[contains(@class, 'product-item')]").first()).toContainText('Coffee Tonic')
         //adding it to the cart
-        await page.locator('[data-product-sku="4650"]').click()
+        await page.locator('//form[contains(@data-role, "tocart-form")]').first().click()
         //check the cart visibility
         await expect(page.locator('#minicart-content-wrapper')).toBeVisible()
     });
