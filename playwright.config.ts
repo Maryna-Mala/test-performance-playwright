@@ -34,7 +34,7 @@ export default defineConfig({
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    viewport: { width: 828, height: 1792 },
+    viewport: { width: 1300, height: 1792 },
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
     actionTimeout: 0,
 
@@ -44,9 +44,14 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
+    {name: 'setup', testMatch: /.*\.setup\.ts/ },
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: { ...devices['Desktop Chrome'],
+        //headless: false,
+        storageState: 'playwright/.auth/user.json'
+      },
+      dependencies: ['setup']
     }
 
     /* {
