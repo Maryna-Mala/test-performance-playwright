@@ -34,10 +34,10 @@ export default defineConfig({
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
+    baseURL: 'https://idealistcoffee.com/',
     viewport: { width: 1300, height: 1792 },
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
     actionTimeout: 0,
-
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
   },
@@ -82,8 +82,8 @@ export default defineConfig({
 
   /* Run your local dev server before starting the tests */
   // webServer: {
-  //   command: 'npm run start',
-  //   url: 'http://127.0.0.1:3000',
+  //   command: 'yarn run start',
+  //   url: 'https://idealistcoffee.com/',
   //   reuseExistingServer: !process.env.CI,
   // },
 });

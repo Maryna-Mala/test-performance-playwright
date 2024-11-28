@@ -1,11 +1,12 @@
 import { test, expect } from '@playwright/test';
+import HomePage from '../src/pages/HomePage';
 
-//test.only('Login with valid credentials for your free account', async () => {
+    test.only('Add Brazil Espresso 250 grams to the cart', async ({ page }) => {
+        const homePage = new HomePage (page)
 
-    test('Add Brazil Espresso 250 grams to the cart', async ({ page }) => {
-        await page.goto('https://idealistcoffee.com/');
-        //click on header on the home page
-        await page.locator("//li[contains(@class, 'nav-1')]").click()
+        await page.goto('')
+        await expect(await page.url()).toContain(await homePage.getPageUrl());
+        await homePage.header.clickOnFirstElement()
         //the first item on the page is visible
         await expect(page.locator("//li[contains(@class, 'product-item')]").first()).toContainText('Coffee Tonic')
         //adding it to the cart
@@ -13,5 +14,3 @@ import { test, expect } from '@playwright/test';
         //check the cart visibility
         await expect(page.locator('#minicart-content-wrapper')).toBeVisible()
     });
-
-//});
