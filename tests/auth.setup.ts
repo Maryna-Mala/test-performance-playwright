@@ -4,12 +4,8 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
 const __filename = fileURLToPath(import.meta.url);
-
 const __dirname = dirname(__filename);
-
-
 const authFile = path.join(__dirname, '../playwright/.auth/user.json');
-
 
 setup('authenticate', async ({ page }) => {
         await page.goto('https://idealistcoffee.com/ua/customer/account/login');
