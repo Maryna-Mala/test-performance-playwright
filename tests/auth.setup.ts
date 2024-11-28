@@ -8,7 +8,7 @@ const __dirname = dirname(__filename);
 const authFile = path.join(__dirname, '../playwright/.auth/user.json');
 
 setup('authenticate', async ({ page }) => {
-        await page.goto('https://idealistcoffee.com/ua/customer/account/login');
+        await page.goto('ua/customer/account/login')
         await page.locator('#email').fill('marinamalaa0@gmail.com');
         await page.locator('[name="login[password]"]').fill('Testuser1234');
         await page.locator("//button[contains(@class, 'primary')]").click();
