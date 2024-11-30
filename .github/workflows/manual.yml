@@ -19,7 +19,7 @@ jobs:
         run: yarn install
 
       - name: Install browsers for Playwright
-        run: npx playwright install chromium
+        run: npx playwright install --with-deps
 
       - name: Run tests
         run: yarn test
