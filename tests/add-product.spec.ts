@@ -1,4 +1,4 @@
-import { expect, test } from '../src/FixtureConfig.ts'
+import { expect, test } from '../src/config/FixtureConfig.ts'
 
 test('Add the first product item to the cart', async ({ page, homePage, coffeePage }) => {
     await homePage.open();

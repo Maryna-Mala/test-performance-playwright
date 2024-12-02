@@ -1,8 +1,7 @@
 import { Page } from "@playwright/test";
 
-
 export default abstract class BasePage {
-    protected readonly BASE_PAGE = 'https://idealistcoffee.com/';
+    //protected readonly BASE_PAGE = '/';
     protected readonly PAGE_NAME: string;
     protected readonly PAGE_URL: string;
     protected readonly page: Page;
