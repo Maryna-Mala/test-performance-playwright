@@ -23,6 +23,12 @@ jobs:
 
       - name: Install browsers for Playwright
         run: npx playwright install chromium
+      
+      - name: Run ESLint
+        run: yarn run lint
+
+      - name: Run Prettier
+        run: yarn run prettier:write
 
       - name: Run tests
         run: yarn test
