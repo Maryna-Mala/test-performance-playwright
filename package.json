@@ -18,7 +18,9 @@
   "scripts": {
     "test": "yarn playwright test",
     "report": "yarn playwright show-report",
-    "lint": "yarn eslint \"src/**\""
+    "lint": "yarn eslint \"src/**\"",
+    "prettier:check": "npx prettier . --check",
+    "prettier:write": "npx prettier . --write"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^8.15.0",
