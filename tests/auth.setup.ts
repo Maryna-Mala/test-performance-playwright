@@ -14,9 +14,7 @@ setup("authenticate", async ({ page }) => {
   await page.locator("//button[contains(@class, 'primary')]").click();
 
   await page.waitForURL("https://idealistcoffee.com/ua/sales/order/history/");
-  await expect(
-    page.locator("//span[contains(text(), 'Марина')]").first(),
-  ).toBeVisible();
+  await expect(page.locator("//span[contains(text(), 'Марина')]").first()).toBeVisible();
 
   await page.context().storageState({ path: authFile });
 });
