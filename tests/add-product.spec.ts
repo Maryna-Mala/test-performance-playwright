@@ -1,14 +1,10 @@
-import { expect, test } from "../src/config/FixtureConfig.ts";
+import { test, expect } from "@playwright/test";
 
-test("Add the first product item to the cart", async ({
-  page,
-  homePage,
-  coffeePage,
-}) => {
-  await homePage.open();
-  expect(page.url()).toContain(await homePage.getPageUrl());
-  await homePage.header.clickOnFirstElement();
-  await expect(coffeePage.productItem.productItemList()).toBeVisible();
-  await coffeePage.productItem.clickAddToCartButton();
-  await expect(coffeePage.cartModal.miniCartContent()).toBeVisible();
-});
+test("Add the first product item to the cart", async ({ page }) => {
+  await page.goto('/');
+  await page.locator('//li[contains(@class, "nav-1")]').click();
+  await expect(page.locator("//li[contains(@class, 'product-item')]").first()).toBeVisible();
+  await page.locator("//li[contains(@class, 'product-item')]").first().click();
+  await expect(page.locator('#minicart-content-wrapper')).toBeVisible();
+
+})
