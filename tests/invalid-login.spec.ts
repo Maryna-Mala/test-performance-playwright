@@ -1,11 +1,9 @@
 import { test, expect } from "@playwright/test";
 
-test.use({ storageState: { cookies: [], origins: [] } });
-
 test("Login with invalid credentials for your free account", async ({ page }) => {
     await page.goto("/customer/account/login");
-    await page.locator("#email").fill("marinamalaa0@gmail.com");
-    await page.locator('[name="login[password]"]').fill("Testuser12345");
+    await page.locator("#email").fill(process.env.LOGIN_EMAIL);
+    await page.locator('[name="login[password]"]').fill(process.env.INVALID_PASSWORD);
     await page.locator("//button[contains(@class, 'primary')]").click();
     const errorMessage = await page.locator('[data-ui-id="message-error"]').textContent();
 

@@ -15,5 +15,8 @@
   "scripts": {
     "test": "yarn playwright test",
     "report": "yarn playwright show-report"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7"
   }
 }
