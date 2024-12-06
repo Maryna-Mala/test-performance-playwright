@@ -26,3 +26,6 @@ jobs:
 
       - name: Run tests
         run: yarn test
+        env:
+          LOGIN_EMAIL: ${{ secrets.LOGIN_EMAIL }}
+          INVALID_PASSWORD: ${{ secrets.INVALID_PASSWORD }}
