@@ -1,5 +1,17 @@
-name: CI/CD Manually
-on: [workflow_dispatch]
+name: CI/CD Pipeline
+on:
+  workflow_dispatch:
+    inputs:
+      threads: 
+        description: Threads to run on
+        required: true
+        type: choice
+        default: '1'
+        options:
+          - '1'
+          - '2'
+          - '3'
+          
 jobs:
   e2e-tests:
     runs-on: ubuntu-latest # or macos-latest, windows-latest
@@ -19,10 +31,10 @@ jobs:
         run: yarn install
 
       - name: Install browsers for Playwright
-        run: npx playwright install --with-deps
+        run: npx playwright install chromium
 
       - name: Run tests
-        run: yarn test
+        run: yarn playwright test --workers ${{ inputs.threads }}
         env:
           LOGIN_EMAIL: ${{ secrets.LOGIN_EMAIL }}
           INVALID_PASSWORD: ${{ secrets.INVALID_PASSWORD }}
